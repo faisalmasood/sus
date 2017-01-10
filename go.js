@@ -13,7 +13,7 @@
 .NOTES
 	File Namespace	: SP-URL-Shortener-Install.ps1
 	Author			: Jeff Jones - @spjeff
-	Version			: 0.50
+	Version			: 0.10
 	Last Modified	: 01-10-2017
 	
 .LINK

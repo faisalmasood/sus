@@ -13,7 +13,7 @@
 .NOTES
 	File Namespace	: SP-URL-Shortener-Install.ps1
 	Author			: Jeff Jones - @spjeff
-	Version			: 0.50
+	Version			: 0.10
 	Last Modified	: 01-10-2017
 	
 .LINK
@@ -22,7 +22,7 @@
 	
 #>
 param (
-    $webAppUrl="http://portal"
+    $webAppUrl = "http://portal"
 )
 
 # Plugin
@@ -67,3 +67,13 @@ $js = Get-ChildItem "go.js"
 $g.Files.Add("/go/go.js", $js.OpenRead(), $false)
 $d = Get-ChildItem "default.aspx"
 $g.Files.Add("/go/default.aspx", $d.OpenRead(), $false)
+
+# Add test items for ?id=1 and ?q=sd
+$item = $list.Items.Add()
+$item["URL"] = "http://google.com"
+$item.Update()
+
+$item = $list.Items.Add()
+$item["sd"]
+$item["URL"]= "http://slashdot.org"
+$item.Update()
